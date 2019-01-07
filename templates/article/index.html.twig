@@ -10,7 +10,15 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
+    <h1>Article</h1>
+    <ul>
+        {% for toto in article %}
+            <li>{{ toto.name }}</li>
+            <li>{{ toto.createdAt|date }}</li>
+            <li>{{ toto.content }}</li>
+            <img width="240" height="340" src="{{ toto.imageUrl }}" alt=""/>
+        {% endfor %}
+    </ul>
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/app/src/Controller/ArticleController.php'|file_link(0) }}">src/Controller/ArticleController.php</a></code></li>
