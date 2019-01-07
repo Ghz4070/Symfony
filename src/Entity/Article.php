@@ -36,6 +36,11 @@ class Article
      */
     private $content;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default": 0})
+     */
+    private $published;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class Article
     public function setContent(string $content): self
     {
         $this->content = $content;
+
+        return $this;
+    }
+
+    public function isPublished(): ?bool
+    {
+        return $this->published;
+    }
+
+    public function changePublished(bool $published): self
+    {
+        $this->published = $published;
 
         return $this;
     }

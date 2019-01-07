@@ -15,7 +15,25 @@
         {% for toto in article %}
             <li>{{ toto.name }}</li>
             <li>{{ toto.createdAt|date }}</li>
-            <li>{{ toto.content }}</li>
+            <li>{{ toto.content|nl2br }}</li>
+            <img width="240" height="340" src="{{ toto.imageUrl }}" alt=""/>
+        {% endfor %}
+    </ul>
+    <h1>Articles Published</h1>
+    <ul>
+        {% for toto in articlePublished %}
+            <li>{{ toto.name }}</li>
+            <li>{{ toto.createdAt|date }}</li>
+            <li>{{ toto.content|nl2br }}</li>
+            <img width="240" height="340" src="{{ toto.imageUrl }}" alt=""/>
+        {% endfor %}
+    </ul>
+    <h1>Article Not Published</h1>
+    <ul>
+        {% for toto in articleNotPublished %}
+            <li>{{ toto.name }}</li>
+            <li>{{ toto.createdAt|date }}</li>
+            <li>{{ toto.content|nl2br }}</li>
             <img width="240" height="340" src="{{ toto.imageUrl }}" alt=""/>
         {% endfor %}
     </ul>
