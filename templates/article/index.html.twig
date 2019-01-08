@@ -3,44 +3,81 @@
 {% block title %}Hello ArticleController!{% endblock %}
 
 {% block body %}
+    <div class="container-fluid col-6">
 
-<div class="example-wrapper">
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-    <h1>Hello {{ controller_name }}! ✅🤩</h1>
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
 
-    <h1>Article</h1>
-    <ul id='dropdown1' class='dropdown-content'>
-        {% for artcile in articles %}
-            <li>{{ artcile.name }}</li>
-            <li>{{ artcile.createdAt|date }}</li>
-            <li>{{ artcile.content|nl2br }}</li>
-            <img width="240" height="340" src="{{ artcile.imageUrl }}" alt=""/>
-        {% endfor %}
-    </ul>
-    <h1>Articles Published</h1>
-    <ul>
-        {% for artcile in articlePublished %}
-            <li>{{ artcile.name }}</li>
-            <li>{{ artcile.createdAt|date }}</li>
-            <li>{{ artcile.content|nl2br }}</li>
-            <img width="240" height="340" src="{{ artcile.imageUrl }}" alt=""/>
-        {% endfor %}
-    </ul>
-    <h1>Article Not Published</h1>
-    <ul>
-        {% for artcile in articleNotPublished %}
-            <li>{{ artcile.name }}</li>
-            <li>{{ artcile.createdAt|date }}</li>
-            <li>{{ artcile.content|nl2br }}</li>
-            <img width="240" height="340" src="{{ artcile.imageUrl }}" alt=""/>
-        {% endfor %}
-    </ul>
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/app/src/Controller/ArticleController.php'|file_link(0) }}">src/Controller/ArticleController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/app/templates/article/index.html.twig'|file_link(0) }}">templates/article/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <div class="form-group">
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+            {{ form_help(form.name) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.content) }}
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content, {'attr': {'class': 'form-control', 'rows' : '2'}}) }}
+            {{ form_help(form.content) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.createdAt) }}
+            {{ form_errors(form.createdAt) }}
+            {{ form_widget(form.createdAt, {'attr': {'class': 'form-control', 'rows' : '2'}}) }}
+            {{ form_help(form.createdAt) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.user) }}
+            {{ form_errors(form.user) }}
+            {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+            {{ form_help(form.user) }}
+        </div>
+        <div>
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+        </div>
+
+        {{ form_end(form) }}
+        <div class=" text-center">
+            <h1>Article</h1>
+
+            <ul id='dropdown1' class='dropdown-content'>
+                {% for article in articles %}
+                    {% if article.user is not null %}
+                        <li>Firstname : {{ article.user.firstname }}</li>
+                        <li>Name of article : {{ article.name }}</li>
+                        <li>Date : {{ article.createdAt|date }}</li>
+                        <li>Commentaire : {{ article.content|nl2br }}</li>
+                        <img width="240" height="340" src="{{ article.imageUrl }}" alt=""/>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <h1>Articles Published</h1>
+            <ul>
+                {% for article in articlePublished %}
+                    {% if article.user is not null %}
+                        <li>Firstname : {{ article.user.firstname }}</li>
+                        <li>Name of article : {{ article.name }}</li>
+                        <li>Date : {{ article.createdAt|date }}</li>
+                        <li>Commentaire : {{ article.content|nl2br }}</li>
+                        <img width="240" height="340" src="{{ article.imageUrl }}" alt=""/>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <h1>Article Not Published</h1>
+            <ul>
+                {% for article in articleNotPublished %}
+                    {% if article.user is not null %}
+                        <li>Firstname : {{ article.user.firstname }}</li>
+                        <li>Name of article : {{ article.name }}</li>
+                        <li>Date : {{ article.createdAt|date }}</li>
+                        <li>Commentaire : {{ article.content|nl2br }}</li>
+                        <img width="240" height="340" src="{{ article.imageUrl }}" alt=""/>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
 {% endblock %}

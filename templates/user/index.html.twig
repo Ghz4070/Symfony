@@ -2,15 +2,16 @@
 
 {% block title %}Formulaire !{% endblock %}
     {% block body %}
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
-
-        <h1>Liste Firstname</h1>
-        <ul>
-            {% for data in users %}
-                <li>{{ data.firstname }}</li>
-            {% endfor %}
-        </ul>
+        <div class="container">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+            <h1>Liste Firstname</h1>
+            <ul>
+                {% for data in users %}
+                    <li>{{ data.firstname }}</li>
+                {% endfor %}
+            </ul>
+        </div>
     {% endblock %}
 

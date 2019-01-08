@@ -39,7 +39,7 @@ class Article
     /**
      * @ORM\Column(type="boolean", options={"default": 0})
      */
-    private $published;
+    private $published = false;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="articles")
