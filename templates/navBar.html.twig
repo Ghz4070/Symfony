@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffcc00;">
+    <a class="navbar-brand" href="{{ path('home') }}">
+        <img src="/images/Four_Star.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="nav-item ml-5">
+                <a class="nav-link text-uppercase font-weight-bold text-expanded"
+                   href="{{ path('article') }}">Article</a>
+            </li>
+            <li class="nav-item ml-3">
+                <a class="nav-link text-uppercase font-weight-bold text-expanded"
+                   href="{{ path('logout') }}">Deconnexion</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav" style="text-align: right;">
+            <li>
+                <a class="nav-link text-uppercase font-weight-bold text-expanded"
+                   href="#">{{ app.user.firstname }}</a>
+            </li>
+            {% else %}
+                <li class="nav-item px-lg-3">
+                    <a class="nav-link text-uppercase font-weight-bold text-expanded"
+                       href="{{ path('login') }}">Connexion</a>
+                </li>
+                <li class="nav-item px-lg-3">
+                    <a class="nav-link text-uppercase font-weight-bold text-expanded" href="{{ path('register') }}">Inscription</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+{#<div class="collapse navbar-collapse" id="navbarResponsive">#}
+        {#<ul class="navbar-nav ml-auto">#}
+            {#<li class="nav-item px-lg-2">#}
+                {#<a class="nav-link text-uppercase font-weight-bold text-expanded" href="connection.php">Connexion#}
+                    {#<span class="sr-only">(current)</span>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li class="nav-item px-lg-2">#}
+                {#<a class="nav-link text-uppercase font-weight-bold text-expanded"#}
+                   {#href="registration.php">Inscription</a>#}
+            {#</li>#}
+        {#</ul>#}
+    {#</div>#}
