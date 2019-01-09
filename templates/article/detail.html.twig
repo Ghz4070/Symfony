@@ -2,11 +2,21 @@
 
 {% block title %}All Article{% endblock %}
 {% block body %}
-    <div class="container-fluid col-6">
-        {% for article in articles %}
-            <div class="form-group">
-                <img width="240" height="340" src="{{ article.imageUrl }}" alt=""/>
-            </div>
-        {% endfor %}
+    <div class="container-fluid col-6 text-center">
+        <div class="form-group mt-3">
+            <li class="form-control">Name of article : {{ articles.name }}</li>
+        </div>
+        <div class="form-group">
+            <img width="240" height="340" src="{{ articles.imageUrl }}" alt=""/>
+        </div>
+        <div class="form-group">
+            <li class="form-control">Date : {{ articles.createdAt|date }}</li>
+        </div>
+        <div class="form-group">
+            <li class="form-control">Commentaire : {{ articles.content|nl2br }}</li>
+        </div>
+        <div class="form-group">
+            <li class="form-control">Firstname : {{ articles.user.firstname }}</li>
+        </div>
     </div>
 {% endblock %}

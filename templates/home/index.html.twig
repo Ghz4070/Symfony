@@ -12,7 +12,7 @@
             {% for article in user.articles %}
                 <div class="form-group">
                     <p>
-                        <a href="{{ path('article', { 'id': article.id }) }}">{{ article.name }}</a>
+                        <a href="{{ path('detail_article', { 'id': article.id }) }}">{{ article.name }}</a>
                     </p>
                 </div>
             {% endfor %}

@@ -46,7 +46,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/{id}", name="article")
+     * @Route("/article/{id}", name="detail_article")
      * @ParamConverter("article", options={"mapping"={"id"="id"}})
      */
     public function article(Article $article)
