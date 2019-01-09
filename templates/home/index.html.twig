@@ -2,14 +2,20 @@
 
 {% block title %}All Article{% endblock %}
 {% block body %}
-    {% for user in users %}
-        <h1>
-            {{ user.firstname }}
-        </h1>
-        {% for article in user.articles %}
-            <p>
-                {{ article.name }}
-            </p>
+    <div class="container-fluid col-6">
+        {% for user in users %}
+            <div class="form-group">
+                <h1>
+                    {{ user.firstname }}
+                </h1>
+            </div>
+            {% for article in user.articles %}
+                <div class="form-group">
+                    <p>
+                        <a href="{{ path('article', { 'id': article.id }) }}">{{ article.name }}</a>
+                    </p>
+                </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
+    </div>
 {% endblock %}

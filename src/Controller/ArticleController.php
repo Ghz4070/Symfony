@@ -8,6 +8,7 @@ use App\Form\ArticleType;
 use App\Form\UserType;
 use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,6 +42,17 @@ class ArticleController extends AbstractController
             'articlePublished' => $articlePublished,
             'articleNotPublished' => $articleNotPublished,
             'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/article/{id}", name="article")
+     * @ParamConverter("article", options={"mapping"={"id"="id"}})
+     */
+    public function article(Article $article)
+    {
+        return $this->render('article/detail.html.twig', array(
+            'articles' => $article,
         ));
     }
 }

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Article{% endblock %}
+{% block body %}
+    <div class="container-fluid col-6">
+        {% for article in articles %}
+            <div class="form-group">
+                <img width="240" height="340" src="{{ article.imageUrl }}" alt=""/>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
