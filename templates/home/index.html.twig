@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Article{% endblock %}
+{% block body %}
+    {% for user in users %}
+        <h1>
+            {{ user.firstname }}
+        </h1>
+        {% for article in user.articles %}
+            <p>
+                {{ article.name }}
+            </p>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

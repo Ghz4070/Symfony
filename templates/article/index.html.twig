@@ -32,6 +32,18 @@
             {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
             {{ form_help(form.user) }}
         </div>
+        <div class="form-group">
+            {{ form_label(form.published) }}
+            {{ form_errors(form.published) }}
+            {{ form_widget(form.published) }}
+            {{ form_help(form.published) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.imageUrl) }}
+            {{ form_errors(form.imageUrl) }}
+            {{ form_widget(form.imageUrl, {'attr': {'class': 'form-control'}}) }}
+            {{ form_help(form.imageUrl) }}
+        </div>
         <div>
             {{ form_widget(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
         </div>

@@ -19,11 +19,13 @@ class ArticleType extends AbstractType
             ->add('name')
             ->add('content')
             ->add('createdAt', BirthdayType::class)
+            ->add('published')
+            ->add('imageUrl')
             ->add('user', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'firstname',
             ])
-            ->add('submit', SubmitType::class);
+        ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)
