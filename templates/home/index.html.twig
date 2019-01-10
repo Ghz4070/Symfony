@@ -11,6 +11,9 @@
             {% for article in user.articles %}
                 <div class="form-group">
                     <a href="{{ path('detail_article', { 'id': article.id }) }}">{{ article.name }}</a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a style="color: #AA3333;" href="{{ path('remove_article', {'id': article.id}) }}">Supprimer</a>
+                    {% endif %}
                 </div>
             {% endfor %}
         {% endfor %}

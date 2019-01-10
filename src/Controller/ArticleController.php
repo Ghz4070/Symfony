@@ -8,6 +8,7 @@ use App\Form\ArticleType;
 use App\Form\UserType;
 use App\Repository\ArticleRepository;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +30,7 @@ class ArticleController extends AbstractController
             $article->setUser($this->getUser());
             $entityManager->persist($article);
             $entityManager->flush();
+            $this->addFlash('notice', 'Vous avez bien crée votre article !');
             return $this->redirectToRoute('home');
         }
         $articles = $articleRepository->findAll();
@@ -55,5 +57,16 @@ class ArticleController extends AbstractController
         return $this->render('article/detail.html.twig', array(
             'article' => $article,
         ));
+    }
+
+    /**
+     * @Route("/article/remove/{id}", name="remove_article")
+     * @ParamConverter("article", options={"mapping"={"id"="id"}})
+     */
+    public function remove(Article $article, EntityManagerInterface $entityManager)
+    {
+        $entityManager->remove($article);
+        $entityManager->flush();
+        return $this->redirectToRoute('home');
     }
 }

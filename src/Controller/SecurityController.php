@@ -44,6 +44,7 @@ class SecurityController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(LoginUserType::class, $user);
+        $this->addFlash('notice', 'Mot de passe ou adresse mail incorrect !');
 
         return $this->render('security/login.html.twig', [
             'error' => $authenticationUtils->getLastAuthenticationError(),
