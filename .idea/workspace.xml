@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbfa6338-b5f8-4a61-87c1-e03695658fc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProfileUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProfileUserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/profile.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/profile.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="fbfa6338-b5f8-4a61-87c1-e03695658fc4" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profile/profile.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -68,6 +63,15 @@
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://00f46758-28e5-4825-bb94-9eabbf195552/schema/symfonydemo/table/article">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -97,7 +101,6 @@
         <option value="$PROJECT_DIR$/templates/article/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Article.php" />
         <option value="$PROJECT_DIR$/src/Form/ArticleType.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
         <option value="$PROJECT_DIR$/templates/navBar.html.twig" />
         <option value="$PROJECT_DIR$/templates/article/detail.html.twig" />
@@ -106,6 +109,7 @@
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/src/Form/ProfileUserType.php" />
         <option value="$PROJECT_DIR$/src/Controller/ProfileController.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
       </list>
     </option>
   </component>
@@ -346,12 +350,12 @@
       <workItem from="1546941482572" duration="15501000" />
       <workItem from="1546969436528" duration="1185000" />
       <workItem from="1547020660650" duration="19246000" />
-      <workItem from="1547107075553" duration="10218000" />
+      <workItem from="1547107075553" duration="10496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65966000" />
+    <option name="totallyTimeSpent" value="66244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +380,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.26904178" />
-      <window_info active="true" anchor="bottom" id="Docker" order="8" visible="true" weight="0.27886978" />
+      <window_info anchor="bottom" id="Docker" order="8" weight="0.27886978" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.19164619" />
@@ -384,7 +388,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14592275" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.14592275" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,13 +557,6 @@
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://00f46758-28e5-4825-bb94-9eabbf195552/schema/symfonydemo/table/article">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -772,6 +769,13 @@
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://00f46758-28e5-4825-bb94-9eabbf195552/schema/symfonydemo/table/article">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
