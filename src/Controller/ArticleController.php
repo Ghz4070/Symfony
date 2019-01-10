@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class ArticleController extends AbstractController
 {
     /**
@@ -27,6 +26,7 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $article->setUser($this->getUser());
             $entityManager->persist($article);
             $entityManager->flush();
         }
@@ -52,7 +52,7 @@ class ArticleController extends AbstractController
     public function article(Article $article)
     {
         return $this->render('article/detail.html.twig', array(
-            'articles' => $article,
+            'article' => $article,
         ));
     }
 }

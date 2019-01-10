@@ -22,11 +22,7 @@ class ArticleType extends AbstractType
             ->add('createdAt', BirthdayType::class)
             ->add('published', CheckboxType::class, array('required' => false))
             ->add('imageUrl')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'firstname',
-            ])
-        ->add('save', SubmitType::class);
+            ->add('save', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

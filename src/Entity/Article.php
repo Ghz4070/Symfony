@@ -99,16 +99,16 @@ class Article
         return $this;
     }
 
-    public function isPublished(): ?bool
-    {
-        return $this->published;
-    }
-
-    public function changePublished(bool $published): self
+    public function setPublished(bool $published): ?bool
     {
         $this->published = $published;
 
-        return $this;
+        return $this->published;
+    }
+
+    public function getPublished(): ?bool
+    {
+        return $this->published;
     }
 
     public function getUser(): ?User
