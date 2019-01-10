@@ -29,6 +29,7 @@ class ArticleController extends AbstractController
             $article->setUser($this->getUser());
             $entityManager->persist($article);
             $entityManager->flush();
+            return $this->redirectToRoute('home');
         }
         $articles = $articleRepository->findAll();
 
