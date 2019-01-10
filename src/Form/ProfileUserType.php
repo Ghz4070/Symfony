@@ -17,7 +17,7 @@ class ProfileUserType extends AbstractType
             ->add('firstname')
             ->add('lastname')
             ->add('birthday', BirthdayType::class)
-            ->add('submit', SubmitType::class)
+            ->add('save', SubmitType::class)
         ;
     }
 
