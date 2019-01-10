@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\LoginUserType;
 use App\Form\RegisterUserType;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +17,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/register", name="register")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, LoggerInterface $logger)
     {
         $user = new User();
         $form = $this->createForm(RegisterUserType::class, $user);
@@ -29,6 +30,8 @@ class SecurityController extends AbstractController
             $entityManager->persist($user);
             $entityManager->persist($user);
             $entityManager->flush();
+            $logger->info('User registered now !');
+            $this->addFlash('success', 'Vous etes desormais inscris!');
             return $this->redirectToRoute('home');
         }
 
@@ -44,7 +47,6 @@ class SecurityController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(LoginUserType::class, $user);
-        $this->addFlash('notice', 'Mot de passe ou adresse mail incorrect !');
 
         return $this->render('security/login.html.twig', [
             'error' => $authenticationUtils->getLastAuthenticationError(),

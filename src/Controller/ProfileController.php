@@ -21,6 +21,7 @@ class ProfileController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
+            $this->addFlash('success', 'Modification enregistrer !');
             return $this->redirectToRoute('home');
         }
         return $this->render('profile/profile.html.twig', [

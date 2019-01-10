@@ -3,11 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Entity\User;
 use App\Form\ArticleType;
-use App\Form\UserType;
 use App\Repository\ArticleRepository;
-use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +27,7 @@ class ArticleController extends AbstractController
             $article->setUser($this->getUser());
             $entityManager->persist($article);
             $entityManager->flush();
-            $this->addFlash('notice', 'Vous avez bien crée votre article !');
+            $this->addFlash('success', 'Vous avez bien crée votre article !');
             return $this->redirectToRoute('home');
         }
         $articles = $articleRepository->findAll();
@@ -67,6 +64,7 @@ class ArticleController extends AbstractController
     {
         $entityManager->remove($article);
         $entityManager->flush();
+        $this->addFlash('notice', 'Element supprimer !');
         return $this->redirectToRoute('home');
     }
 }

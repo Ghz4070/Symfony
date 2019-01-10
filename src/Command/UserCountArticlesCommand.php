@@ -30,17 +30,13 @@ class UserCountArticlesCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
-        $arg1 = $input->getArgument('arg1');
+        $arg1 = $input->getArgument('email');
+        $user = $this->userManager->getUserByEmail();
 
-        if ($arg1) {
-            $io->note(sprintf('You passed an argument: %s', $arg1));
+        if ($user == null) {
+            $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        } else {
+            $io->error('No user with that email...');
         }
-
-        if ($input->getOption('option1')) {
-            // ...
-        }
-
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
-        $io->error('No user with that email...');
     }
 }

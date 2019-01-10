@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block title %}{% endblock %}
 {% block body %}
+    {% if not error is empty %}
+        <div class="container-fluid col-6 text-center mt-3 alert alert-danger" role="alert">
+            <span>Mot de passe ou adresse mail incorrect !</span>
+        </div>
+    {% endif %}
     <div class="container-fluid col-6 text-center mt-4">
         {{ form_start(form) }}
         <div class="form-group">
